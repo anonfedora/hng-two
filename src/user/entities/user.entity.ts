@@ -3,7 +3,8 @@ import {
     Column,
     PrimaryGeneratedColumn,
     BeforeInsert,
-    ManyToMany,OneToMany
+    ManyToMany,
+    OneToMany
 } from "typeorm";
 import { IsEmail, IsNotEmpty, IsOptional, IsString } from "class-validator";
 import { Organization } from "../../organization/entities/organization.entity";
@@ -41,13 +42,13 @@ export class User {
     phone?: string;
 
     @ManyToMany(() => Organization, organization => organization.users)
-    organizations: Organization[];
+    organizations?: Organization[];
 
     @OneToMany(
         () => OrganisationUser,
         organisationUser => organisationUser.user
     )
-    organisationUsers: OrganisationUser[];
+    organisationUsers?: OrganisationUser[];
 
     @BeforeInsert()
     async hashPassword() {

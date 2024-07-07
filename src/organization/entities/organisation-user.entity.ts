@@ -14,5 +14,5 @@ export class OrganisationUser {
         () => Organization,
         organisation => organisation.users
     )
-    organization: Organization;
+    organization?: Organization;
 }
