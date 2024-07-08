@@ -51,7 +51,7 @@ export class UserController {
             const user = await this.userService.findOne(userId);
             return {
                 status: "success",
-                message: "Login successful",
+                message: "User retrieved successfully",
                 data: user
             };
         } catch (error) {
