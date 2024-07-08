@@ -16,7 +16,7 @@ export class User {
     @PrimaryGeneratedColumn("uuid")
     userId: string;
 
-    @Column({ unique: true })
+    @Column()
     @IsNotEmpty()
     @IsString()
     firstName: string;

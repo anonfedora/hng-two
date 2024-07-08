@@ -12,7 +12,7 @@ export class Organization {
     @PrimaryGeneratedColumn("uuid")
     orgId: string;
 
-    @Column({ unique: true })
+    @Column()
     name: string;
 
     @Column({ nullable: true })

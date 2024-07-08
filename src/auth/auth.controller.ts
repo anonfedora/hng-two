@@ -62,6 +62,7 @@ export class AuthController {
                 data: result
             };
         } catch (error) {
+          console.log(error)
             throw new HttpException(
                 {
                     status: "Bad request",
